@@ -8,6 +8,8 @@ export const POST = async (req: NextRequest) => {
       headers: { Authorization: process.env.HUGGING_FACE_KEY as string },
       method: "POST",
       body: JSON.stringify({ inputs: prompt }),
+height: 300,
+        width: 300
     }
   );
 
