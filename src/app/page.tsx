@@ -63,12 +63,12 @@ export default function Home() {
     }
 
   }
-const [tags, setTags] = useState([
+const [tags, setTags] = useState<string[]>([ // Type annotation for tags
     "Landscape", "Portrait", "Abstract", "Sci-fi", "Fantasy", "Cyberpunk",
     "Anime", "Photorealistic", "Minimalist", "Watercolor", "Oil painting",
   ]);
 
-  const handleTagClick = (tag) => {
+  const handleTagClick = (tag: string) => { // Type annotation for tag parameter
     setPrompt(prevPrompt => prevPrompt ? `${prevPrompt}, ${tag}` : tag);
   };
   return (
