@@ -73,7 +73,10 @@ const [tags, setTags] = useState<string[]>([ // Type annotation for tags
   };
   return (
     <main className="flex gap-4 flex-col items-center justify-between p-24">
-
+<div className="bg-gray-200 text-center p-2 rounded w-full md:w-[500px]">
+        {/* Replace with actual ad code from your ad provider */}
+        <p>Advertisement</p> 
+      </div>
       {image ? (
         <>
           {isLoading ? (
@@ -128,7 +131,10 @@ const [tags, setTags] = useState<string[]>([ // Type annotation for tags
 
 
       </div>
-
+<div className="bg-gray-200 text-center p-2 rounded w-full md:w-[500px] mt-4">
+        {/* Replace with actual ad code from your ad provider */}
+        <p>Advertisement</p>
+      </div>
     </main>
   )
 }
