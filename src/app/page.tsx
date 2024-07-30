@@ -63,7 +63,14 @@ export default function Home() {
     }
 
   }
+const [tags, setTags] = useState([
+    "Landscape", "Portrait", "Abstract", "Sci-fi", "Fantasy", "Cyberpunk",
+    "Anime", "Photorealistic", "Minimalist", "Watercolor", "Oil painting",
+  ]);
 
+  const handleTagClick = (tag) => {
+    setPrompt(prevPrompt => prevPrompt ? `${prevPrompt}, ${tag}` : tag);
+  };
   return (
     <main className="flex gap-4 flex-col items-center justify-between p-24">
 
@@ -85,7 +92,17 @@ export default function Home() {
 
       <div className="w-full md:w-[500px]">
         <input value={prompt} disabled={isLoading} className="p-2 rounded border outline-none w-full text-gray-600" onChange={(e) => setPrompt(e.target.value)} placeholder='Enter prompt for image' type="text" />
-
+<div className="flex flex-wrap gap-2 mt-2">
+          {tags.map(tag => (
+            <button
+              key={tag}
+              onClick={() => handleTagClick(tag)}
+              className="px-3 py-1 rounded bg-gray-200 text-gray-700 hover:bg-gray-300"
+            >
+              {tag}
+            </button>
+          ))}
+        </div>
         <div className="flex flex-col md:flex-row gap-2 mt-2 w-full">
           <button disabled={isLoading} onClick={doGenerateImg} className='p-2 flex gap-2 items-center border rounded bg-gradient-to-br from-green-600 to-blue-600 text-slate-50 disabled:opacity-50 w-full justify-center h-[45px]'>
             <>
