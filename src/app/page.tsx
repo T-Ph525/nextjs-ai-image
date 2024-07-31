@@ -77,16 +77,15 @@ const [tags, setTags] = useState<string[]>([ // Type annotation for tags
         {/* Replace with actual ad code from your ad provider */}
         <p>Advertisement</p> 
       </div>
+      {/* Image Display */}
       {image ? (
-        <>
-          {isLoading ? (
-            <ImageLoader isLoading={isLoading} />
-          ) : (
-            <img className="md:h-[300px] md:w-[300px]" src={image} alt={prompt} />
-          )}
-        </>
+        <ImageLoader src={image} isLoading={isLoading} alt={prompt} /> 
       ) : (
-        <img className="md:h-[300px] md:w-[300px]" src="/placeholder.jpg" alt="placeholder image" />
+        <img
+          className="md:h-[300px] md:w-[300px]"
+          src="/placeholder.jpg"
+          alt="placeholder image"
+        />
       )}
 
       {error && (
